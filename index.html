@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma Liste d'Anniversaire</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    margin-top:10px;
+    opacity:0.8;
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+    padding:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h2{
+    font-size:1.2rem;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#cbd5e1;
+    margin-bottom:15px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#3b82f6;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#2563eb;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎂 Ma Liste d'Anniversaire 🎂</h1>
+    <p>Les composants PC que j'aimerais recevoir</p>
+</header>
+
+<div class="container">
+    <div class="grid">
+
+        <div class="card">
+            <img src="images/a520m.jpg" alt="">
+            <div class="card-content">
+                <h2>Carte Mère Gigabyte A520M</h2>
+                <p>Carte mère AM4 Micro ATX.</p>
+                <a class="btn" href="https://www.amazon.de/-/en/GIGABYTE-A520M-MicroATX-Motherboard-Chipset/dp/B083R82CNX" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/ryzen5500.jpg" alt="">
+            <div class="card-content">
+                <h2>AMD Ryzen 5 5500</h2>
+                <p>Processeur 6 cœurs AM4.</p>
+                <a class="btn" href="https://www.amazon.fr/AMD-Ryzen-5500-processeur-GHz/dp/B0C81BMN1N" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/assassinx120.jpg" alt="">
+            <div class="card-content">
+                <h2>Thermalright Assassin X 120</h2>
+                <p>Ventirad silencieux pour Ryzen.</p>
+                <a class="btn" href="https://www.amazon.fr/TR-AssassinX120-Refroidisseur-ventilateur-silencieux/dp/B0D9VTYHMS" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/corsairram.jpg" alt="">
+            <div class="card-content">
+                <h2>Corsair Vengeance LPX 16 Go DDR4</h2>
+                <p>Mémoire RAM DDR4.</p>
+                <a class="btn" href="https://www.cdiscount.com/informatique/memoire-ram/memoire-ram-corsair-vengeance-lpx-ddr4-16gb/f-10716-cor0840006608530.html" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/crucialp3.jpg" alt="">
+            <div class="card-content">
+                <h2>Crucial P3 SSD NVMe</h2>
+                <p>SSD rapide pour Windows et jeux.</p>
+                <a class="btn" href="https://www.amazon.fr/Crucial-Interne-Compatible-Ordinateur-Portable/dp/B0DC8VPSHV" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/rx7600.jpg" alt="">
+            <div class="card-content">
+                <h2>Gigabyte Radeon RX 7600</h2>
+                <p>Carte graphique Gaming OC.</p>
+                <a class="btn" href="https://www.amazon.fr/GIGABYTE-Carte-Graphique-Radeon-GAMING/dp/B0C5DXJ165" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/msi650w.jpg" alt="">
+            <div class="card-content">
+                <h2>MSI MAG A650BN</h2>
+                <p>Alimentation 650W 80+ Bronze.</p>
+                <a class="btn" href="https://www.amazon.fr/MSI-A650BN-Bloc-dalimentation-Prise/dp/B0991TZ399" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/boitier.jpg" alt="">
+            <div class="card-content">
+                <h2>Boîtier Aquarium RGB</h2>
+                <p>Boîtier panoramique avec ventilateurs.</p>
+                <a class="btn" href="https://www.amazon.fr/FOIFKIN-Boitier-préinstallés-Ventilateur-panoramique/dp/B0DFR66MM5" target="_blank">Voir l'article</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    ❤️ Merci pour les cadeaux ❤️
+</footer>
+
+<script>
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.style.boxShadow = "0 0 25px #3b82f6";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
+    });
+});
+</script>
+
+</body>
+</html>
