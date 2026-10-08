@@ -801,7 +801,7 @@ local function writeConfigFile()
     if not CanUseFiles then
         Fluent:Notify({
             Title = "Config",
-            Content = "Ton environnement ne supporte pas les fichiers.",
+            Content = "Your environment does not support file operations.",
             Duration = 4
         })
         return false
@@ -911,7 +911,7 @@ local function saveConfig(name)
     if name == "" then
         Fluent:Notify({
             Title = "Config",
-            Content = "Entre un nom.",
+            Content = "Enter a name.",
             Duration = 3
         })
         return false
@@ -923,7 +923,7 @@ local function saveConfig(name)
         selectedConfig = name
 
         Fluent:Notify({
-            Title = "Config sauvegardée",
+            Title = "Config Saved",
             Content = name,
             Duration = 3
         })
@@ -938,7 +938,7 @@ local function loadConfig(name)
     if not name or name == "" or not configs[name] then
         Fluent:Notify({
             Title = "Config",
-            Content = "Config introuvable.",
+            Content = "Config not found.",
             Duration = 3
         })
         return false
@@ -948,7 +948,7 @@ local function loadConfig(name)
         selectedConfig = name
 
         Fluent:Notify({
-            Title = "Config chargée",
+            Title = "Config Loaded",
             Content = name,
             Duration = 3
         })
@@ -976,7 +976,7 @@ local function deleteConfig(name)
     writeConfigFile()
 
     Fluent:Notify({
-        Title = "Config supprimée",
+        Title = "Config Deleted",
         Content = name,
         Duration = 3
     })
@@ -1003,7 +1003,7 @@ ConfigTab:AddParagraph({
 ConfigTab:AddSection("Sauvegarde")
 
 local ConfigNameInput = ConfigTab:AddInput("ConfigName", {
-    Title = "Nom de la config",
+    Title = "Config Name",
     Description = "Exemple : Rage / Legit / HeadOnly",
     Default = "",
     Placeholder = "Nom...",
@@ -1012,7 +1012,7 @@ local ConfigNameInput = ConfigTab:AddInput("ConfigName", {
 })
 
 ConfigTab:AddButton({
-    Title = "Sauvegarder la config actuelle",
+    Title = "Save Current Config",
     Callback = function()
         saveConfig(ConfigNameInput.Value)
     end
@@ -1022,7 +1022,7 @@ ConfigTab:AddSection("Chargement")
 
 local ConfigDropdown = ConfigTab:AddDropdown("ConfigList", {
     Title = "Config",
-    Description = "Sélectionne une config.",
+    Description = "Select a config.",
     Values = getConfigNames(),
     Multi = false,
     Default = 1
@@ -1052,14 +1052,14 @@ local function refreshConfigDropdown()
 end
 
 ConfigTab:AddButton({
-    Title = "Charger la config",
+    Title = "Load Config",
     Callback = function()
         loadConfig(selectedConfig)
     end
 })
 
 ConfigTab:AddButton({
-    Title = "Actualiser la liste",
+    Title = "Refresh List",
     Callback = function()
         readConfigFile()
         refreshConfigDropdown()
@@ -1067,7 +1067,7 @@ ConfigTab:AddButton({
 })
 
 ConfigTab:AddButton({
-    Title = "Supprimer la config",
+    Title = "Delete Config",
     Callback = function()
         if selectedConfig then
             deleteConfig(selectedConfig)
@@ -1077,7 +1077,7 @@ ConfigTab:AddButton({
     end
 })
 
-ConfigTab:AddSection("Auto-exécution")
+ConfigTab:AddSection("Auto Load")
 
 local AutoLoadToggle = ConfigTab:AddToggle("AutoLoad", {
     Title = "Auto Load",
@@ -1098,8 +1098,8 @@ AutoLoadToggle:OnChanged(function()
 end)
 
 local AutoConfigDropdown = ConfigTab:AddDropdown("AutoConfig", {
-    Title = "Config automatique",
-    Description = "Config chargée automatiquement.",
+    Title = "Auto Config",
+    Description = "Config Loaded automatiquement.",
     Values = getConfigNames(),
     Multi = false,
     Default = 1
@@ -1126,12 +1126,12 @@ AutoConfigDropdown:OnChanged(function(Value)
 end)
 
 ConfigTab:AddButton({
-    Title = "Définir la config sélectionnée comme automatique",
+    Title = "Set Selected Config as Auto",
     Callback = function()
         if not selectedConfig or not configs[selectedConfig] then
             Fluent:Notify({
                 Title = "Auto Load",
-                Content = "Sélectionne une config.",
+                Content = "Select a config.",
                 Duration = 3
             })
             return
